@@ -161,7 +161,7 @@ export const defaultOptions: NormalizedFullOptions = {
   preserveTimezones: false,
   strictFilters: false,
   strictVariables: false,
-  ownPropertyOnly: true,
+  ownPropertyOnly: false,
   lenientIf: false,
   globals: {},
   keepOutputType: false,
