@@ -161,9 +161,4 @@ describe('Issues', function () {
     const tpl = engine.parse('Welcome to {{ now | date: "%Y-%m-%d" }}!')
     expect(engine.render(tpl, { now: new Date('2019/02/01') })).to.eventually.equal('Welcome to 2019-02-01')
   })
-  it('#454 leaking JS prototype getter functions in evaluation', async () => {
-    const engine = new Liquid({ ownPropertyOnly: true })
-    const html = engine.parseAndRenderSync('{{foo | size}}-{{bar.coo}}', { foo: 'foo', bar: Object.create({ coo: 'COO' }) })
-    expect(html).to.equal('3-')
-  })
 })
